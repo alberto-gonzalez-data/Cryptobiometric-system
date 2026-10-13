@@ -1,11 +1,11 @@
+
 # Iris Cryptobiometric Authentication System
 
 An iris-based cryptobiometric authentication system developed as a Master's thesis. A deep neural network extracts a compact feature vector from the user's iris. The vector is made **cancelable** and bound to a random secret through a **fuzzy commitment** scheme with **Reed-Solomon** error correction. Only an **Argon2** hash of that secret is stored, so no raw biometric data is kept.
 
 ## Demo
 
-<!-- Drag and drop your video here when editing the README on GitHub -->
-https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-VIDEO
+[https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-VIDEO](https://github.com/user-attachments/assets/eb83983c-ed51-4db1-80b1-b896dc9ceccc)
 
 ## System overview
 
