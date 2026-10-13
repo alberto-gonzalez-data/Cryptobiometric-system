@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-VIDEO
 
 ## System overview
 
-![System overview](assets/SystemOverview.png)
+![System overview](assets/system_overview.png)
 
 The system has two subsystems:
 
