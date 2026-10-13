@@ -1,0 +1,55 @@
+project:
+  name: "TFM_cryptobiometric"
+  seed: 42
+
+paths:
+  data:
+    raw: "data/raw"
+    processed: "data/processed"
+    segmented: "data/segmented"
+    polar: "data/polar"
+    features: "data/features"
+  models:
+    unet: "models/unet"
+    efficientnet: "models/efficientnet"
+    svm: "models/svm"
+  logs: "logs"
+  results: "results"
+
+datasets:
+  polyu:
+    path: "data/raw/polyu"
+    spectra: ["NIR", "VIS"]
+  iitd:
+    path: "data/raw/iitd"
+    spectra: ["NIR"]
+  casia:
+    path: "data/raw/casia"
+    spectra: ["NIR"]
+
+preprocessing:
+  image_size: [640, 480]
+  aspect_ratio: "4:3"
+
+segmentation:
+  model: "unet++"
+  encoder: "efficientnet-b4"
+  input_size: [320, 240]
+
+feature_extraction:
+  model: "efficientnetv2_s"
+  pretrained: true
+  embedding_dim: 512
+  loss: "arcface"
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.0001
+  optimizer: "adamw"
+  scheduler: "cosine"
+  mixed_precision: true  # fp16 para aprovechar la RTX 4060
+
+evaluation:
+  metrics: ["accuracy", "EER", "TAR@FAR=0.1%"]
+  split: 0.8  # 80% train, 20% test
